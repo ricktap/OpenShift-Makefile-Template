@@ -1,0 +1,29 @@
+kind: Template
+apiVersion: v1
+metadata:
+  name: openshift-dashboard
+  annotations:
+    description: Build and deploy the OpenShift dashboard application.
+    tags: openshift,dashboard
+labels:
+  template: openshift-dashboard
+
+parameters:
+
+- name: APP_NAME
+  description: The name of the application
+  value: app-name
+
+- name: APP_DOMAIN
+  description: The name of the application
+  value: app-domain
+
+objects:
+
+- kind: ImageStream
+  apiVersion: v1
+  metadata:
+    name: ${APP_NAME}
+    labels:
+      application: ${APP_NAME}
+      domain: ${APP_DOMAIN}

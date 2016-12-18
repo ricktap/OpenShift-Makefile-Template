@@ -1,0 +1,7 @@
+APP_NAME = great-test-app
+
+pv_APP_NAME = $(APP_NAME)
+pv_APP_DOMAIN = great-test-domain
+
+pvc_APP_NAME = $(APP_NAME)
+pvc_APP_DOMAIN = rot
