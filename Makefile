@@ -1,4 +1,4 @@
-.PHONY: all internal-create-pv internal-create-pvc
+.PHONY: all
 all: internal-create-pv internal-create-pvc 
 
 include env
