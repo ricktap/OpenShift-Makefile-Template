@@ -19,8 +19,8 @@ uc = $(shell echo $(1) | tr a-z A-Z)
 # @params: Object Class: e.g. pv, pvc, etc..
 #################################################################################
 oc_params = $(foreach param, \
-						$(filter $1_%,$(.VARIABLES)), \
-						-v $(subst $1_,,$(param))=$($(param)))
+            $(filter $1_%,$(.VARIABLES)), \
+            -v $(subst $1_,,$(param))=$($(param)))
 
 #################################################################################
 # processes and creates the objects of a file, that is matched
@@ -34,7 +34,6 @@ oc_params = $(foreach param, \
 # @see: uc
 #################################################################################
 yml_oc_importer = $(foreach V,\
-									$(call yml_template_files,$1),\
-									echo "--> Creating $(call uc,$1)s from $(V):"; \
-									oc process -f $V $(call oc_params,$1);)
-
+                  $(call yml_template_files,$1),\
+                  echo "--> Creating $(call uc,$1)s from $(V):"; \
+                  oc process -f $V $(call oc_params,$1);)
