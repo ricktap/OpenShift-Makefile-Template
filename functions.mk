@@ -38,3 +38,12 @@ yml_oc_importer = $(foreach V,\
                   @echo "--> Creating $(call uc,$1)s from $(V):"; \
 									echo "----> Used Parameters: $(call oc_params,$1)"; \
                   oc process -f $V $(call oc_params,$1);)
+
+#################################################################################
+# calls the parent image if its folder exists
+#
+# @params: - Parents Folder, 
+# 			   - Parents Makefile Call in a seperate shell call, to 
+# 			     separate it's environment
+#################################################################################
+call_parent = $(if $(realpath $1), @(/bin/bash -c "cd $1 && $2"))

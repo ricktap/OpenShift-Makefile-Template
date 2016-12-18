@@ -1,4 +1,4 @@
-APP_NAME = great-test-app
+export APP_NAME = great-test-app
 
 pv_APP_NAME = $(APP_NAME)
 pv_APP_DOMAIN = great-test-domain
