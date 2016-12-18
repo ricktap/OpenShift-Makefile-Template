@@ -35,5 +35,6 @@ oc_params = $(foreach param, \
 #################################################################################
 yml_oc_importer = $(foreach V,\
                   $(call yml_template_files,$1),\
-                  echo "--> Creating $(call uc,$1)s from $(V):"; \
+                  @echo "--> Creating $(call uc,$1)s from $(V):"; \
+									echo "----> Used Parameters: $(call oc_params,$1)"; \
                   oc process -f $V $(call oc_params,$1);)

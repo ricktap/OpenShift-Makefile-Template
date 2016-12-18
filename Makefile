@@ -5,5 +5,5 @@ include env
 include functions.mk
 
 internal-create-%: $(pv pvc imagestream)
-	@$(call yml_oc_importer,$(subst internal-create-,,$@))
+	$(call yml_oc_importer,$(subst internal-create-,,$@))
 
