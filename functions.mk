@@ -46,4 +46,4 @@ yml_oc_importer = $(foreach V,\
 # 			   - Parents Makefile Call in a seperate shell call, to 
 # 			     separate it's environment
 #################################################################################
-call_parent = $(if $(realpath $1), @(/bin/bash -c "cd $1 && $2"))
+call_parent = $(if $(realpath $1), @(/bin/bash -c "make -C $1 $2"))
